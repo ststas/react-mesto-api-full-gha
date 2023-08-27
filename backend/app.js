@@ -15,7 +15,7 @@ const { PORT, URI } = process.env;
 mongoose.connect(URI, { useNewUrlParser: true });
 
 const app = express();
-app.use(cors({ origin: 'https://ststas.nomoredomainsicu.ru', credentials: true }));
+app.use(cors({ origin: 'http://ststas.nomoredomainsicu.ru', credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 app.use(helmet());
