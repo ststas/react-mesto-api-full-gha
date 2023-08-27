@@ -11,6 +11,6 @@
 
 IP 130.193.40.173
 
-Frontend http://ststas.nomoredomainsicu.ru/
+Frontend https://ststas.nomoredomainsicu.ru/
 
-Backend http://api.ststas.nomoredomainsicu.ru/
+Backend https://api.ststas.nomoredomainsicu.ru/
