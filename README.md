@@ -9,8 +9,8 @@
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP 130.193.40.173
 
-Frontend https://...
+Frontend http://ststas.nomoredomainsicu.ru/
 
-Backend https://...
+Backend http://api.ststas.nomoredomainsicu.ru/
