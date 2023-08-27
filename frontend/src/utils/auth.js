@@ -1,6 +1,4 @@
-// const BASE_URL = 'https://auth.nomoreparties.co'
-const BASE_URL = 'http://localhost:4000'
-
+const BASE_URL = 'https://api.ststas.nomoredomainsicu.ru'
 
 // функция получения ответа и преобразования его в объект
 function getRes(res) {

@@ -92,7 +92,7 @@ class Api {
 }
 
 const api = new Api ({
-  apiUrl: 'http://localhost:4000',
+  apiUrl: 'https://api.ststas.nomoredomainsicu.ru',
   headers: {
     'Content-Type': 'application/json',
   }
