@@ -10,9 +10,9 @@ require('dotenv').config();
 const Router = require('./routes');
 const { requestRateLimiter } = require('./utils/requestRateLimiter');
 
-const { PORT, URI } = process.env;
+const { PORT = 3000, URI = 'mongodb://localhost:27017/mestodb' } = process.env;
 
-mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(URI);
 
 const app = express();
 app.use(cors({ origin: 'http://ststas.nomoredomainsicu.ru', credentials: true }));
