@@ -12,7 +12,7 @@ const { requestRateLimiter } = require('./utils/requestRateLimiter');
 
 const { PORT, URI } = process.env;
 
-mongoose.connect(URI, { useNewUrlParser: true });
+mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const app = express();
 app.use(cors({ origin: 'http://ststas.nomoredomainsicu.ru', credentials: true }));
