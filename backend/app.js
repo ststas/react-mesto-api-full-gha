@@ -10,7 +10,7 @@ require('dotenv').config();
 const Router = require('./routes');
 const { requestRateLimiter } = require('./utils/requestRateLimiter');
 
-const { PORT = 3000, URI = 'mongodb://localhost:27017/mestodb' } = process.env;
+const { PORT = 4000, URI = 'mongodb://130.193.40.173:27017/mestodb' } = process.env;
 
 mongoose.connect(URI, { useNewUrlParser: true });
 
