@@ -20,7 +20,7 @@ function Register ({ onRegister, isLoading }){
         formClassName={'auth__form'}
         onSubmit={handleSubmit}
         submitButtonClassName={`auth__submit-button ${!isValid && 'auth__submit-button_disabled'}`}
-        buttonText={`${isLoading ? 'Регисттрирую...' : 'Регистрация'}`} 
+        buttonText={`${isLoading ? 'Регистрирую...' : 'Регистрация'}`} 
       >
         <Input 
           type={'email'}
