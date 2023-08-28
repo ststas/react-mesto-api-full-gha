@@ -7,6 +7,12 @@ const { login, logout, createUser } = require('../controllers/users');
 const usersRouter = require('./users');
 const cardsRouter = require('./cards');
 
+router.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+
 router.post('/signup', validateSignUp(), createUser);
 router.post('/signin', validateSignIn(), login);
 router.delete('/signout', logout);
