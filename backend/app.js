@@ -15,7 +15,7 @@ const { PORT = 3000, URI = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
 mongoose.connect(URI);
 
 const app = express();
-app.use(cors({ origin: 'http://ststas.nomoredomainsicu.ru', credentials: true }));
+app.use(cors({ origin: ['http://ststas.nomoredomainsicu.ru', 'https://ststas.nomoredomainsicu.ru'], credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 app.use(helmet());
