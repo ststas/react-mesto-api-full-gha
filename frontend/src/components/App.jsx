@@ -30,7 +30,7 @@ function App() {
   const [cards, setCards] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [isFetching, setIsFetching] = useState(false)
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') || false)
   const [isLogSuccessful, setIsLogSuccessful] = useState(null)
   const [userEmail, setUserEmail] = useState('')
   const [isBurgerOpen, setIsBurgerOpen] = useState(false)
@@ -54,23 +54,9 @@ function App() {
     setSelectedCard(card)
     setIsImagePopupOpen(true)
   }
-  function openInfoToolTip() {
+  function openInfoToolTip () {
     setIsInfoPopupOpen(true)
   }
-  
-  function userSignOut() {
-    setIsLoggedIn(false)
-    setUserEmail('')
-    navigate('/signin', {replace: true})
-    setIsBurgerOpen(false)
-  };
-
-  function userSignIn(data) {
-    setUserEmail(data)
-    setIsLoggedIn(true)
-    navigate('/', {replace: true})
-  };
-
 //ФУНКЦИЯ ЗАКРЫТИЯ ПОПАПОВ
 //обработчик стейтов попапов
   const setAllPopupsStates = useCallback(()=> {
@@ -140,6 +126,7 @@ function App() {
   function handleBurgerClick() {
     isBurgerOpen ? setIsBurgerOpen(false) : setIsBurgerOpen(true)
   }  
+
 // загрузка данных с сервера
   useEffect(() => { 
     if (isLoggedIn) {
@@ -147,11 +134,11 @@ function App() {
       Promise.all([api.getUserInfo(), api.getInitialCards()])
       .then(([userData, cardsData]) => {
         setCurrentUser(userData)
-        setCards(cardsData.reverse())
+        setCards(cardsData)
         setIsFetching(false)
       })
       .catch(err => console.error(`Ошибка загрузки данных с сервера: ${err}`))
-  }},[isLoggedIn])
+  }},[isLoggedIn])  
 // функция регистрации нового пользователя
   function handleRegister(email, password, resetForm) {
     setIsLoading(true)
@@ -172,36 +159,47 @@ function App() {
     setIsLoading(true)
     auth.authorize(email, password)
     .then((res) => {
-      userSignIn(email)
+      localStorage.setItem("jwt", res.token);
+      localStorage.setItem("isLoggedIn", true);
+      setUserEmail(email)
+      setIsLoggedIn(true)
+      navigate('/', {replace: true})
       resetForm()
-    })
+    }
+    )
     .catch(err => {
       setIsLogSuccessful(false)
       openInfoToolTip()
       console.error(`Ошибка авторизации пользователя: ${err}`)
     })
-    .finally(() => {setIsLoading(false)})
+    .finally(() => setIsLoading(false))
   }
 // функция выхода из профиля
   function handleSignOut () {
-    auth.logout()
-    .catch(err => {console.error(`Ошибка выхода: ${err}`)})
-    .finally(()=> {
-      userSignOut()})
+    localStorage.removeItem("jwt");
+    localStorage.removeItem("isLoggedIn");
+    setIsLoggedIn(false)
+    setUserEmail('')
+    navigate('/signin', {replace: true})
+    setIsBurgerOpen(false)
   }
 // функции проверки наличия токена  
-  function  handleTokenCheck() {
-    auth.checkToken()
-    .then((res) => userSignIn(res.email))
-    .catch(err => {
-      userSignOut()
-      console.error(`Ошибка авторизации пользователя: ${err}`)
-    })
-  };
+  const handleTokenCheck = useCallback(()=>{
+    if (localStorage.getItem('jwt')) {
+      const jwt = localStorage.getItem('jwt');
+      auth.checkToken(jwt)
+      .then((res) => {
+        setUserEmail(res.data.email)
+        setIsLoggedIn(true)
+        navigate('/', {replace: true})
+      })
+      .catch(err => console.error(`Ошибка авторизации пользователя: ${err}`))
+    }
+  }, [setUserEmail, setIsLoggedIn, navigate]);
+
   useEffect(() => {
     handleTokenCheck();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[]);
+  },[handleTokenCheck]);
   
 // возвращаем разметку
   return (
