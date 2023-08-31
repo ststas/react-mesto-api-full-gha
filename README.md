@@ -1,7 +1,7 @@
 # PROJECT MESTO REACT FULL API
 
 ## Description & Functionality
-* Web application provides one's user page of a social network. Frontend part is developed using React.js. Backend part is based on Express.
+* Web application provides a user's page of a social network. Frontend part is developed using React.js. Backend part is based on Express.
 * Updated JWT cookie at frontend
 * Added errors and request logs at backend through Winston
 * Implemented CORS
@@ -31,9 +31,9 @@
 * please SIGN UP to explore the app. You can use fictional email & password to authorize.
 
 ## Frontend
-* https://ststas.github.io/projects/mestoreact
+* https://ststas.nomoredomainsicu.ru/
 ## Backend
-* https://ststas.github.io/projects/mestoreact
+* https://api.ststas.nomoredomainsicu.ru/
 
 ### Stanislav Zaitsev х Yandex Practicum 
 
@@ -71,9 +71,9 @@
 * Пожалуйста, зарегистрируйтесь, чтобы использовать приложение. Для регистрации можно использовать вымышленные почту и пароль.
 
 ## Фронт
-* https://ststas.github.io/projects/mestoreact
+* https://ststas.nomoredomainsicu.ru/
 ## Бэк
-* https://ststas.github.io/projects/mestoreact
+* https://api.ststas.nomoredomainsicu.ru/
 
 ### Станислав Зайцев х Yandex Practicum 
 
