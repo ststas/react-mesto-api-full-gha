@@ -3,9 +3,9 @@
 ## Description & Functionality
 * Web application provides a user's page of a social network. Frontend part is developed using React.js. Backend part is based on Express.
 * Updated JWT cookie at frontend
-* Added errors and request logs at backend through Winston
+* Added errors and requests logs at backend through Winston
 * Implemented CORS
-* Launched Ubuntu VM at cloud servive using NGINX, MONGODB, PM2.
+* Launched Ubuntu VM at cloud service using NGINX, MONGODB, PM2.
 * Issued SSL certificates to improve security
 * Project has been tested and works on WebKit and Chromium based desktop/mobile browsers.
 
