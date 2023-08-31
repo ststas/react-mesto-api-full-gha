@@ -1,6 +1,7 @@
 # PROJECT MESTO REACT FULL API
 
 ## Description & Functionality
+* Web application provides one's user page of a social network. Frontend part is developed using React.js. Backend part is based on Express.
 * Updated JWT cookie at frontend
 * Added errors and request logs at backend through Winston
 * Implemented CORS
@@ -40,6 +41,7 @@
 # ПРОЕКТ MESTO REACT FULL API
 
 ## Описание и функциональность
+* Web приложение представляет собой страницу пользователя социальной сети. Фронт написан на React.js, бэк основан на Express.
 * Добавлено сохрание JWT в куки на фронте
 * Добавлено логгирование ошибок и запросов на бэке (Winston)
 * Сконфигурирован CORS
