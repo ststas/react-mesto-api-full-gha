@@ -75,8 +75,4 @@
 ## Бэк
 * https://api.ststas.nomoredomainsicu.ru/
 
-### Станислав Зайцев х Yandex Practicum 
-
-
-
-[![Статус тестов / Test status](../../actions/workflows/tests.yml/badge.svg)](../../actions/workflows/tests.yml)
+### Станислав Зайцев х Yandex Practicum
