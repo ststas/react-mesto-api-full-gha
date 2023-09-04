@@ -3,6 +3,7 @@ const Card = require('../models/card');
 const AccessDeniedError = require('../errors/AccessDeniedError');
 
 module.exports.getCards = (req, res, next) => Card.find()
+  .sort({ createdAt: -1 })
   .populate(['owner', 'likes'])
   .then((cards) => res.status(200).send(cards))
   .catch((err) => next(err));

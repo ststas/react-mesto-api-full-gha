@@ -147,7 +147,7 @@ function App() {
       Promise.all([api.getUserInfo(), api.getInitialCards()])
       .then(([userData, cardsData]) => {
         setCurrentUser(userData)
-        setCards(cardsData.reverse())
+        setCards(cardsData)
         setIsFetching(false)
       })
       .catch(err => console.error(`Ошибка загрузки данных с сервера: ${err}`))
