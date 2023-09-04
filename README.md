@@ -83,4 +83,4 @@ Frontend https://ststas.nomoredomainsicu.ru/
 
 Backend https://api.ststas.nomoredomainsicu.ru/
 
-https://github.com/ststas/react-mesto-api-full-gha/actions/workflows/tests.yml
+Test https://github.com/ststas/react-mesto-api-full-gha/actions/workflows/tests.yml
