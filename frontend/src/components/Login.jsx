@@ -38,7 +38,7 @@ function Login ({ onLogin, isLoading }){
           placeHolder={'Password'}
           inputClassName={'auth__field'}
           required={true}
-          minLength={''}
+          minLength={8}
           maxLength={''}
           value={password}
           onChange={handleChange}
