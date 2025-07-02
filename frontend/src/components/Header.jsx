@@ -25,8 +25,6 @@ function Header ({ isLoggedIn, onSignOut, userEmail, isBurgerOpen, onBurgerClick
             <Link to={linkPath} className="header__link">{linkText}</Link> 
           )
         }
-
-
     </header>
   )
 }
